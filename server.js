@@ -1,4 +1,5 @@
 const express = require('express');
+const Stack = require('./stack');
 const app = express();
 
 const strip = code => {
@@ -11,13 +12,15 @@ const pairs = {
     '{': '}',
     '(': ')'
 }
-const openers = Object.keys(pairs);
 
 app.use(express.json());
 
 app.post('/lint', (req, res) => {
     const brackets = strip(req.body.code);
+    Object.keys(pairs).includes(brackets);
 
+    const stack = new Stack()
+    res.send(stack)
 
 });
 
