@@ -1,8 +1,8 @@
 {
-  "name": "demo",
+  "name": "lab-04",
   "version": "1.0.0",
-  "description": "* Promise Review   * event loop     * baker ordering ingredients   * copy   * getCharacter   * getManyCharacters * Collection class   * addItem   * hasItem   * removeItem * Color class   * red, green, blue private props   * asRGB   * asHex   * setRedDecimal   * setGreenDecimal   * setBlueDecimal   * setRedHex   * setBlueHex   * setGreenHex   * getRedDecimal   * getBlueDecimal   * getGreenDecimal   * getRedHex   * getBlueHex   * getGreenHex * Stack class * Store class   * new takes a reducer and initial state   * state private prop   * getState method   * dispatch method   * subscribe method",
-  "main": "sandbox.js",
+  "description": "*baby routes *classes *simple api",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
