@@ -20,7 +20,27 @@ app.post('/lint', (req, res) => {
     Object.keys(pairs).includes(brackets);
 
     const stack = new Stack()
-    res.send(stack)
+    let prove = {"success": true};
+
+    brackets.map(bracket => {
+        const peek = stack.peek();
+        console.log(bracket)
+        if(Object.keys(pairs).includes(bracket)) {
+            stack.push(bracket)
+        } else {
+            for(const [key, value] of Object.entries(brackets)) {
+                if(bracket === key && peek !== value) {
+                    prove = {
+                        "error": `missing ${value}`
+                    };
+                } else if(bracket === key && peek === value) {
+                    stack.pop()
+                }
+            }
+        } 
+    })
+
+    res.send(prove)
 
 });
 
